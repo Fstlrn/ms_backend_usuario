@@ -1,13 +1,18 @@
 import {Router} from "express";
 
-import { crearUser, eliminarUser, modificarUser, mostrarUser } from "../controllers/controllers.user.js";
+import { crearUser, eliminarUser, listarUser, modificarUser, mostrarUser, logueoUser } from "../controllers/controllers.user.js";
+import { verifyToken } from "../middleware/oauth.js";
 
 export const rutaUser = Router();
 
-rutaUser.get("/user", mostrarUser);
+rutaUser.get("/user/:id", mostrarUser);
 
-rutaUser.post("/user", crearUser);
+rutaUser.get("/user", listarUser);
 
-rutaUser.put("/user",modificarUser);
+rutaUser.post("/user", verifyToken, crearUser);
 
-rutaUser.delete("/user", eliminarUser);
+rutaUser.put("/user",verifyToken, modificarUser);
+
+rutaUser.delete("/user", verifyToken, eliminarUser); 
+
+rutaUser.post("/login", logueoUser);

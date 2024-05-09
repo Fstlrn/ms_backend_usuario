@@ -2,7 +2,7 @@ export const MESSAGE =  {"HOME": "HOLA HOME", "GALERY": "HOLA GALLERY", "ABOUT":
 
 export const msjconsole = "Estoy en el puerto: http://localhost:";
 
-export const error = (req, res, status=500, mensaje="")=>{
+export const error = (req, res, status=500, mensaje="no")=>{
     res.status(status).json({
         error:true,
         status:status,
