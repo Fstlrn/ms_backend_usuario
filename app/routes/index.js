@@ -7,3 +7,4 @@ ruta.use("/",rutaMain);
 ruta.use("/api", rutaUser);
 
 export default ruta;
+
