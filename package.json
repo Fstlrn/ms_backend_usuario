@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app/index.js --exec babel-node",
-    "start": "node index.js",
+    "start": "node dist/index.js",
     "build": "babel app --out-dir dist",
-    "swagger": "node ./app/tool/swagger.js"
+    "swaggerdev": "node ./app/tool/swagger.js",
+    "swagger": "node ./dist/tool/swagger.js"
   },
   "author": "Ayelen",
   "license": "ISC",
