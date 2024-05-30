@@ -13,6 +13,7 @@
   "paths": {
     "/home": {
       "get": {
+        
         "description": "",
         "responses": {
           "200": {
